@@ -1,0 +1,11 @@
+.filme-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+}
