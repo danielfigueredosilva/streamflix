@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./BarNav.css";
 
+<<<<<<< Updated upstream
 const BarNav = () => {
   return (
     <nav className="nav-bar">
@@ -11,6 +12,17 @@ const BarNav = () => {
         <Link to="/" className="navbar-link">
           Filmes
         </Link>
+=======
+const BarNav = ()=>{
+    return(
+        <nav className="nav-bar">
+            <Link to ='/' className="navbar-logo">
+                LOGO
+            </Link>
+            <div className="navbar-links">
+                <Link to="/" className="navbar-link">
+                Filmes</Link>
+>>>>>>> Stashed changes
 
         <Link to="" className="navbar-link">
           Minha Lista
