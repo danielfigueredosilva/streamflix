@@ -4,6 +4,18 @@
 }
 
 body{
-  background: linear-gradient(135deg, #000000 80%, #B1060A 95%, #E50914 100%);
+/* FUNDO DE TODAS AS PAGINAS */
+     background: linear-gradient(
+        to top,
+         #000000 0%,      
+        #1a0000 20%,     
+        #360e0e 50%,     
+        #661a1a  84%,     
+        #942525 97% 
+    );
+    
+    background-attachment: fixed; /* Para ficar o gradiente continuo */
+    background-size: cover; 
+    
 
 }

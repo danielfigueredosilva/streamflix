@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import "./BarNav.css";
+import "./NavBar.css";
 import Logo from '../assets/play-svgrepo-com.svg';
 
-const BarNav = () => {
+const NavBar = () => {
     return(
 
   
@@ -50,4 +50,4 @@ const BarNav = () => {
   );
 };
 
-export default BarNav;
+export default NavBar;
