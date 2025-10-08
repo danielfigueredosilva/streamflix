@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sobre from "./pages/Sobre.jsx";
 import NavBar from "./components/NavBar.jsx";
 import MyCarousel from "./components/carousel/MyCarousel.jsx"
-import MultiCarousel from "./components/carousel/MultiCarousel.jsx";
+import MultiCarousel, { slidesFiccao, slidesDrama } from "./components/carousel/MultiCarousel.jsx";
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<> <MyCarousel /> <MultiCarousel/> <ListaFilmes />  </>} />
+          <Route path="/" element={<> <MyCarousel /> <MultiCarousel tipo="Ficção" slides={slidesFiccao} /> <MultiCarousel tipo="Drama" slides={slidesDrama}/> <ListaFilmes />  </>} />
           <Route path="/Sobre" element={<Sobre />} />
         </Routes>
       </BrowserRouter>

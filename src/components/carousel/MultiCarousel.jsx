@@ -3,8 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./MultiCarousel.css"
 
-export default function MyCarousel() {
-  const slides = [
+export const slidesFiccao = [
     { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 1" },
     { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 2" },
     { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 3" },
@@ -15,6 +14,21 @@ export default function MyCarousel() {
     { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 8" },
   ];
 
+  export const slidesDrama = [
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 1" },
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 2" },
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 3" },
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 4" },
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 5" },
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 6" },
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 7" },
+    { src: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png?auto=webp&s=7fa371ad8765c2321e3215a4771b690f83bbacc6", title: "Titulo 8" },
+  ];
+
+
+
+export default function MultiCarousel({ tipo, slides = []}) {
+  
   const responsive = {
     desktop: { breakpoint: { max: 3000, min: 1024 }, items: 5 },
     tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
@@ -23,7 +37,7 @@ export default function MyCarousel() {
 
   return (
     <div className="container my-4"> {/* <-- Container do Bootstrap */}
-    <p className="text-start mb-4 fs-4">Ação</p>
+    <p className="text-start mb-1 fs-4">{tipo}</p>
       <Carousel
         responsive={responsive}
         infinite={true}

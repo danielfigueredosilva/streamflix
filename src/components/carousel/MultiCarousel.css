@@ -22,3 +22,7 @@
   color: white !important;  /* cor da seta */
   font-size: 20px !important;
 }
+
+p{
+    color: white;
+}
