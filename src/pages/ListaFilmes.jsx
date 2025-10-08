@@ -1,63 +1,44 @@
-import React, { useState } from "react";
-import FilmeCard from "../components/FilmeCard";
+import React, { useEffect, useState } from "react";
 
-const filmesData = [
-  {
-    id: "1",
-    titulo: "Vingadores: Ultimato",
-    ano: 2019,
-    genero: "Ação",
-    poster:
-      "https://cdn.awsli.com.br/2500x2500/1610/1610163/produto/177685212/poster-os-vingadores-ultimato-a-242769bd.jpg",
-    nota: 8.4,
-  },
-  {
-    id: "2",
-    titulo: "Parasita",
-    ano: 2019,
-    genero: "Thriller",
-    poster:
-      "https://uauposters.com.br/media/catalog/product/5/2/523420201013-uau-posters-filmes-parasite-parasite-1.jpg",
-    nota: 8.6,
-  },
-  {
-    id: "3",
-    titulo: "Coringa",
-    ano: 2019,
-    genero: "Drama",
-    poster:
-      "https://cdn.awsli.com.br/2500x2500/1610/1610163/produto/177680448/poster-joker-coringa-a-5cedbd11.jpg",
-    nota: 8.4,
-  },
-  {
-    id: "4",
-    titulo: "Interestelar",
-    ano: 2014,
-    genero: "Ficção Científica",
-    poster:
-      "https://uauposters.com.br/media/catalog/product/cache/1/thumbnail/800x930/9df78eab33525d08d6e5fb8d27136e95/4/1/411320150509-uau-posters-filmes-interestelar-interestellar.jpg",
-    nota: 8.6,
-  },
-  {
-    id: "5",
-    titulo: "Pantera Negra",
-    ano: 2018,
-    genero: "Ação",
-    poster:
-      "https://cdn.awsli.com.br/2500x2500/1610/1610163/produto/177685269/poster-pantera-negra-c-7e8ee5ed.jpg",
-    nota: 7.3,
-  },
-];
+export default function ListaFilmes() {
+  const [filmes, setFilmes] = useState([]);
+  const API_KEY = "04134eb66512d31bfadb77c6a5206905"; // sua chave TMDB
 
-const ListaFilmes = () => {
-  const [filmes] = useState(filmesData);
+  useEffect(() => {
+    async function carregarFilmes() {
+      try {
+        const resposta = await fetch(
+          `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pt-BR&page=1`
+        );
+        const dados = await resposta.json();
+        setFilmes(dados.results || []);
+      } catch (erro) {
+        console.error("Erro ao carregar filmes:", erro);
+      }
+    }
+
+    carregarFilmes();
+  }, []);
 
   return (
     <div>
-      {filmes.map((filme) => (
-      <FilmeCard key={filme.id} filme={filme} />
-      ))}
+      <h1>Filmes Populares</h1>
+
+      {filmes.length === 0 ? (
+        <p>Carregando filmes...</p>
+      ) : (
+        <ul>
+          {filmes.map((filme) => (
+            <li key={filme.id}>
+              <img
+                src={`https://image.tmdb.org/t/p/w200${filme.poster_path}`}
+                alt={filme.title}
+              />
+              <p>{filme.title}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
-};
-export default ListaFilmes;
+}
