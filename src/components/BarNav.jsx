@@ -12,7 +12,7 @@ const BarNav = () => {
                 Filmes</Link>
 
         <Link to="" className="navbar-link">
-          Minha Lista
+          Minha Lista 
         </Link>
 
         <Link to="" className="navbar-link">
