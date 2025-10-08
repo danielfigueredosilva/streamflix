@@ -1,0 +1,6 @@
+.carousel-img {
+  width: 800px;
+  height: 400px;
+  object-fit: cover; /* mantém proporção e corta o excesso */
+  filter: brightness(0.5); /* 0 = preto, 1 = original */
+}

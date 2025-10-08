@@ -2,3 +2,8 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+body{
+  background: linear-gradient(135deg, #000000 80%, #B1060A 95%, #E50914 100%);
+
+}
