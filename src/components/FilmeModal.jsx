@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../components/FilmeModal.css";
 import { Botao, BotaoIcone } from "../components/Button";
+import { adicionarMinhaLista  } from "../pages/MinhaLista";
 
 const ModalFilme = ({ movie, onClose }) => {
   const [showTrailer, setShowTrailer] = useState(false);
@@ -46,8 +47,11 @@ const ModalFilme = ({ movie, onClose }) => {
                     size="medium" 
                     onClick={() => setShowTrailer(true)}
                   >Assitir ao Trailler</Botao>
-                  <BotaoIcone size="medium">
-                     +
+                  <BotaoIcone 
+                    size="medium"
+                    onClick={() => adicionarMinhaLista(movie)}
+                    >
+                   +
                   </BotaoIcone>
                 </div>
               </div>

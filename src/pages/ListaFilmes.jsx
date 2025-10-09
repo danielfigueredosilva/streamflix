@@ -24,7 +24,7 @@ export default function ListaFilmes() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>s
+    <div style={{ padding: "20px" }}>
       <h1>🎬 Filmes Populares</h1>
 
       {filmes.length === 0 ? (
