@@ -5,17 +5,12 @@ import { Botao, BotaoIcone } from "./Button";
 const MovieModalAPI = ({ movie, onClose }) => {
   const [showTrailer, setShowTrailer] = useState(false);
 
-  // Função para formatar a data
+ 
   const formatDate = (dateString) => {
     return new Date(dateString).getFullYear();
   };
 
-  // Função para converter minutos para horas
-  const formatDuration = (minutes) => {
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    return `${hours}h ${mins}m`;
-  };
+
 
   // URL da imagem de backdrop
   const backdropUrl = movie.backdrop_path 
@@ -24,10 +19,7 @@ const MovieModalAPI = ({ movie, onClose }) => {
     ? `https://image.tmdb.org/t/p/w1280${movie.poster_path}`
     : 'https://via.placeholder.com/1280x720/333/666?text=Imagem+Indisponível';
 
-  // URL do poster
-  const posterUrl = movie.poster_path 
-    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : 'https://via.placeholder.com/500x750/333/666?text=Poster+Indisponível';
+ 
 
   // Gêneros (você precisará mapear os IDs para nomes)
   const genresMap = {
