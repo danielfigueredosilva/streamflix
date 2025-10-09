@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getPopulares } from "../components/API/tmdb";
+import MovieModalAPI from "../components/MovieModalAPI";
 
 export default function ListaFilmes() {
   const [filmes, setFilmes] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   useEffect(() => {
     getPopulares()
@@ -10,8 +13,18 @@ export default function ListaFilmes() {
       .catch(err => console.error("Erro ao buscar filmes:", err));
   }, []);
 
+  const handleOpenModal = (filme) => {
+    setSelectedMovie(filme);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedMovie(null);
+  };
+
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px" }}>s
       <h1>🎬 Filmes Populares</h1>
 
       {filmes.length === 0 ? (
@@ -35,7 +48,12 @@ export default function ListaFilmes() {
                 borderRadius: "12px",
                 padding: "10px",
                 color: "white",
+                cursor: "pointer",
+                transition: "transform 0.2s ease",
               }}
+              onClick={() => handleOpenModal(filme)}
+              onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+              onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
             >
               <img
                 src={`https://image.tmdb.org/t/p/w200${filme.poster_path}`}
@@ -48,9 +66,20 @@ export default function ListaFilmes() {
               <p style={{ marginTop: "10px", fontWeight: "bold" }}>
                 {filme.title}
               </p>
+              <p style={{ fontSize: "0.8rem", color: "#ccc", marginTop: "5px" }}>
+                ⭐ {filme.vote_average.toFixed(1)}
+              </p>
             </li>
           ))}
         </ul>
+      )}
+
+      {/* Modal */}
+      {isModalOpen && selectedMovie && (
+        <MovieModalAPI 
+          movie={selectedMovie} 
+          onClose={handleCloseModal} 
+        />
       )}
     </div>
   );

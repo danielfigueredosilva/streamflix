@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "../components/FilmeModal.css";
+import { Botao, BotaoIcone } from "../components/Button";
 
-const MovieModal = ({ movie, onClose }) => {
+const ModalFilme = ({ movie, onClose }) => {
   const [showTrailer, setShowTrailer] = useState(false);
 
-  // IDs dos trailers do YouTube declarei diferente pra saber qual é qual
   const trailerIds = {
     "Interestelar": "zSWdZVtXT7E",
     "Duna": "8g18jFHCLXk",
@@ -14,7 +14,6 @@ const MovieModal = ({ movie, onClose }) => {
   const trailerUrl = `https://www.youtube.com/embed/${trailerIds[movie.title] || 'zSWdZVtXT7E'}?autoplay=1&mute=1&controls=1&showinfo=0&rel=0`;
 
   return (
-    //fecha a modal 
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>×</button>
@@ -42,22 +41,19 @@ const MovieModal = ({ movie, onClose }) => {
               <div className="hero-content">
                 <h1 className="movie-title">{movie.title}</h1>
                 <div className="movie-actions">
-                  <button className="btn-play">
-                    <span className="play-icon">▶</span>
-                    Assistir
-                  </button>
-                  <button className="btn-play" onClick={() => setShowTrailer(true)}>
-                    <span className="play-icon">▶</span>
-                    Assistir ao Trailer
-                  </button>
-                  <button className="btn-secondary">
-                    +
-                  </button>
+                  <Botao size="medium" >Assitir</Botao>
+                  <Botao 
+                    size="medium" 
+                    onClick={() => setShowTrailer(true)}
+                  >Assitir ao Trailler</Botao>
+                  <BotaoIcone size="medium">
+                     +
+                  </BotaoIcone>
                 </div>
               </div>
             </div>
 
-           <div className="modal-details">
+             <div className="modal-details">
           <div className="movie-meta">
             <span className="match-rate">99% compatível</span>
             <span className="year">{movie.year}</span>
@@ -67,7 +63,7 @@ const MovieModal = ({ movie, onClose }) => {
 
           <div className="movie-info-grid">
             <div className="info-column">
-              <div className="info-section">
+              <div className="info-section">    
                 <h3>Sinopse</h3>
                 <p className="synopsis">{movie.synopsis}</p>
               </div>
@@ -90,7 +86,7 @@ const MovieModal = ({ movie, onClose }) => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
           </>
         )}
       </div>
@@ -98,4 +94,4 @@ const MovieModal = ({ movie, onClose }) => {
   );
 };
 
-export default MovieModal;
+export default ModalFilme;
