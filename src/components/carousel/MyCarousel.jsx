@@ -23,7 +23,7 @@ const MyCarousel = () => {
       duration: "2h 35min",
       year: "2021",
       genres: ["Ficção Científica", "Aventura"],
-      backdropUrl: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png"
+      backdropUrl: "https://uploads.jovemnerd.com.br/wp-content/uploads/2021/10/duna-critica.jpg?ims=1210x544/filters:quality(75)"
     },
     {
       title: "Oppenheimer",
@@ -32,7 +32,7 @@ const MyCarousel = () => {
       duration: "3h 00min",
       year: "2023",
       genres: ["Biografia", "Drama"],
-      backdropUrl: "https://preview.redd.it/1920x1080-interstellar-black-hole-wallpaper-by-me-made-in-v0-ba6o4k61m47f1.png"
+      backdropUrl: "https://woomagazine.com.br/wp-content/uploads/2023/07/Oppenheimer3.jpg"
     }
   ];
 
@@ -55,7 +55,7 @@ const MyCarousel = () => {
         <div className="carousel-inner rounded-5">
           {filmes.map((filme, index) => (
             <div key={index} className={`carousel-item ${index === 2 ? 'active' : ''}`}>
-              <img src={filme.backdropUrl} alt={filme.title} className="d-block w-100 carousel-img"/>
+              <img src={filme.backdropUrl} alt={filme.title} className="d-block w-100 h-100 carousel-img"/>
               <div className="container">
                 <div className="carousel-caption text-start">
                   <h1>{filme.title}</h1>

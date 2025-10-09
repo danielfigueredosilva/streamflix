@@ -33,7 +33,7 @@ function Categorias() {
 
     return (
         <div className="categorias-page">
-            <h1 className="categorias-title">Pegue a Pipoca!</h1>
+            {/* <h1 className="categorias-title">Pegue a Pipoca!</h1> */}
             
             {genres.slice(0, 8).map(genre => ( 
                 <SecaoCategoria 

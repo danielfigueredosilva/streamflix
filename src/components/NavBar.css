@@ -1,9 +1,16 @@
 #btn-login{
-    background-color: #1A1718;
-    color: white;
-    border: #1A1718;
+    background-color: white;
+    border: none;
     display: flex;
     align-items: center;
     justify-items: center;
     padding: 8px 16px;
 }
+
+#btn-login:hover {
+    color: black;
+}
+
+/* @media (max-width: 600px) {
+  
+} */

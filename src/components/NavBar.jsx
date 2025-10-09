@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./NavBar.css";
-import Logo from "../assets/play-svgrepo-com.svg";
+import Logo from "../assets/logo pobre.png";
 
 const NavBar = () => {
 
@@ -10,7 +10,7 @@ const NavBar = () => {
       {/* Logo */}
       <div className="d-flex align-items-center">
         <Link to="/" className="d-inline-flex align-items-center">
-          <img src={Logo} alt="logo" width={70} height={45} />
+          <img src={Logo} alt="logo" width={70} height={60} />
         </Link>
       </div>
 
@@ -23,6 +23,7 @@ const NavBar = () => {
               "nav-link px-3 rounded-5" +
               (isActive ? " bg-white text-dark " : " text-white")
             }
+          
           >
             Filmes
           </NavLink>
@@ -65,7 +66,7 @@ const NavBar = () => {
       {/* Botão */}
       <div className="d-flex">
         <button type="button" className="btn btn-outline-primary me-2 rounded-5" id="btn-login">
-          Login
+          <span><i class="fa-solid fa-user"></i></span>
         </button>
       </div>
     </header>

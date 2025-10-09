@@ -21,8 +21,7 @@ export default function App() {
             element={
               <>
                 <MyCarousel />
-                <MultiCarousel tipo="Ficção" slides={slidesFiccao} />
-                <MultiCarousel tipo="Drama" slides={slidesDrama} />
+                  <Categorias />
                 <ListaFilmes />
               </>
             }
