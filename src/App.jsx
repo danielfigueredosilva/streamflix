@@ -5,6 +5,10 @@ import Sobre from "./pages/Sobre.jsx";
 import NavBar from "./components/NavBar.jsx";
 import MyCarousel from "./components/carousel/MyCarousel.jsx"
 import MultiCarousel, { slidesFiccao, slidesDrama } from "./components/carousel/MultiCarousel.jsx";
+import Categorias from "./pages/Categorias.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 export default function App() {
   return (
@@ -14,6 +18,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<> <MyCarousel /> <MultiCarousel tipo="Ficção" slides={slidesFiccao} /> <MultiCarousel tipo="Drama" slides={slidesDrama}/> <ListaFilmes />  </>} />
           <Route path="/Sobre" element={<Sobre />} />
+          <Route path="/Categorias" element={<Categorias />} />
+          
         </Routes>
       </BrowserRouter>
     </div>
