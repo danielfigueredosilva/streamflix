@@ -22,13 +22,13 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/minha-lista" className={({isActive})=> "nav-link px-3 rounded-5" + (isActive? " bg-white text-dark " : " text-white")}>
-          Minha Lista
+        <NavLink to="/categorias" className={({isActive})=> "nav-link px-3 rounded-5" + (isActive? " bg-white text-dark" : " text-white")}>
+          Categorias
         </NavLink>
       </li>
       <li>
-        <NavLink to="/categorias" className={({isActive})=> "nav-link px-3 rounded-5" + (isActive? " bg-white text-dark" : " text-white")}>
-          Categorias
+        <NavLink to="/minha-lista" className={({isActive})=> "nav-link px-3 rounded-5" + (isActive? " bg-white text-dark " : " text-white")}>
+          Minha Lista
         </NavLink>
       </li>
       <li>

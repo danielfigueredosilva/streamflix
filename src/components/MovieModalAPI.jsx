@@ -31,6 +31,8 @@ const MovieModalAPI = ({ movie, onClose }) => {
 
   const genres = movie.genre_ids?.map(id => genresMap[id] || "Desconhecido").join(", ");
 
+  
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
