@@ -64,7 +64,7 @@ const NavBar = () => {
 
       {/* Botão */}
       <div className="d-flex">
-        <button type="button" className="btn btn-outline-primary me-2 rounded-5">
+        <button type="button" className="btn btn-outline-primary me-2 rounded-5" id="btn-login">
           Login
         </button>
       </div>

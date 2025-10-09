@@ -49,8 +49,9 @@ export default function MinhaLista() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>🎬 Minha Lista de Filmes</h1>
+    
+    <div style={{ padding: "20px", display:"flex", }}>
+      {/* <h1>🎬 Minha Lista de Filmes</h1> */}
 
       {minhaLista.length === 0 ? (
         <p>Você ainda não adicionou filmes à sua lista.</p>
@@ -130,8 +131,9 @@ export default function MinhaLista() {
                   e.stopPropagation(); // impede abrir modal
                   removerFilme(filme.id);
                 }}
-              >
-                Remover
+                >
+                    Remove
+                
               </button>
             </li>
           ))}

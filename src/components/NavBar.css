@@ -1,1 +1,9 @@
-
+#btn-login{
+    background-color: #1A1718;
+    color: white;
+    border: #1A1718;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 8px 16px;
+}
