@@ -9,6 +9,7 @@ import Categorias from "./pages/Categorias.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MinhaLista from "./pages/MinhaLista.jsx";
+import Cadastro from "./pages/Cadastro.jsx";
 
 export default function App() {
   return (
@@ -29,6 +30,8 @@ export default function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/categorias" element={<Categorias />} />
           <Route path="/minha-lista" element={<MinhaLista />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+
         </Routes>
       </BrowserRouter>
     </div>

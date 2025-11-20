@@ -62,13 +62,24 @@ const NavBar = () => {
           </NavLink>
         </li>
       </ul>
+      <li>
+          <NavLink
+            to="/cadastro"
+            className={({ isActive }) =>
+              "nav-link px-3 rounded-5" +
+              (isActive ? " bg-white text-dark " : " text-white")
+            }
+          >
+            {/* Botão */}
+            <div className="d-flex">
+              <button type="button" className="btn btn-outline-primary me-2 rounded-5" id="btn-login">
+                <span><i class="fa-solid fa-user"></i></span>
+              </button>
+            </div>
+          </NavLink>
+        </li>
 
-      {/* Botão */}
-      <div className="d-flex">
-        <button type="button" className="btn btn-outline-primary me-2 rounded-5" id="btn-login">
-          <span><i class="fa-solid fa-user"></i></span>
-        </button>
-      </div>
+      
     </header>
   );
 };
