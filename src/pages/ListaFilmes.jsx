@@ -25,7 +25,15 @@ export default function ListaFilmes() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1 className="text-white mb-4">🎬 Filmes Populares</h1>
+      <h1 className="text-white mb-4
+      
+      
+      
+      
+      
+      
+      
+      ">🎬 Filmes Populares</h1>
 
       {filmes.length === 0 ? (
         <p>Carregando filmes...</p>
