@@ -46,6 +46,8 @@ export default function Login() {
 
       <button onClick={logar}>Entrar</button>
 
+      <button onClick={() => navigate('/cadastro')}>Cadastrar</button>
+
       {msg && <p>{msg}</p>}
     </div>
   );

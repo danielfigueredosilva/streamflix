@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { API } from "../components/API/api";
+import { useNavigate } from "react-router-dom";
 
 export default function Cadastro() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [msg, setMsg] = useState("");
+
+  const navigate = useNavigate();
 
   const cadastrar = async () => {
     try {
@@ -44,6 +47,7 @@ export default function Cadastro() {
       />
 
       <button onClick={cadastrar}>Cadastrar</button>
+      <button onClick={() => {navigate('/login')}}>Login</button>
 
       {msg && <p>{msg}</p>}
     </div>
