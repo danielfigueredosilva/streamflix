@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './MeusFilmes.css'
 
 export default function MeusFilmes() {
   const [filmes, setFilmes] = useState([]);

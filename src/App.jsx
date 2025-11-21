@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import MinhaLista from "./pages/MinhaLista.jsx";
 import Cadastro from "./pages/Cadastro.jsx";
 import Login from "./pages/Login.jsx";
-import CriarFilme from "./pages/CriarFilme.jsx"
+import MeusFilmes from "./pages/MeusFilmes.jsx";
 
 export default function App() {
   return (
@@ -34,7 +34,7 @@ export default function App() {
           <Route path="/minha-lista" element={<MinhaLista />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/criarFilme" element={<CriarFilme />} />
+          <Route path="/meusFilmes" element={<MeusFilmes/>} />
 
         </Routes>
       </BrowserRouter>

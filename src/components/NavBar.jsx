@@ -74,13 +74,13 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            to="/criarFilme"
+            to="/meusFilmes"
             className={({ isActive }) =>
               "nav-link px-3 rounded-5" +
               (isActive ? " bg-white text-dark " : " text-white")
             }
           >
-            Adicionar Filme
+            Meus Filmes
           </NavLink>
         </li>
       </ul>
