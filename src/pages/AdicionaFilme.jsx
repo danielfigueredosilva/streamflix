@@ -117,7 +117,7 @@ const styles = {
     maxWidth: "500px",
     margin: "0 auto",
     padding: "20px",
-    background: "#141414",
+    background: "rgba(0, 0, 0, 0.75)",
     color: "#fff",
     borderRadius: "10px",
   },
