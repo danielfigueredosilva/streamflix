@@ -9,7 +9,7 @@ export default function MeusFilmes() {
   // Função para buscar os filmes
   const fetchFilmes = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/filmes/");
+      const response = await fetch("http://127.0.0.1:8000/forum/filmes/");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

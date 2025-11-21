@@ -39,39 +39,7 @@ const NavBar = () => {
             Categorias
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/minha-lista"
-            className={({ isActive }) =>
-              "nav-link px-3 rounded-5" +
-              (isActive ? " bg-white text-dark " : " text-white")
-            }
-          >
-            Minha Lista
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/sobre"
-            className={({ isActive }) =>
-              "nav-link px-3 rounded-5" +
-              (isActive ? " bg-white text-dark " : " text-white")
-            }
-          >
-            Sobre
-          </NavLink>
-        </li>
-         <li>
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              "nav-link px-3 rounded-5" +
-              (isActive ? " bg-white text-dark " : " text-white")
-            }
-          >
-            Login
-          </NavLink>
-        </li>
+        
         <li>
           <NavLink
             to="/meusFilmes"
@@ -83,23 +51,61 @@ const NavBar = () => {
             Meus Filmes
           </NavLink>
         </li>
-      </ul>
-      <li>
+
+        <li>
           <NavLink
-            to="/cadastro"
+            to="/adicionaFilme"
             className={({ isActive }) =>
               "nav-link px-3 rounded-5" +
               (isActive ? " bg-white text-dark " : " text-white")
             }
           >
-            {/* Botão */}
+            Adiocionar Filmes
+          </NavLink>
+        </li>
+      </ul>
+
+       {/*Botões de login e cadastro*/}     
+      <li>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              "nav-link px-3 rounded-5" +
+              (isActive ? " bg-white text-dark " : " text-white")
+            }
+          >
+            {/* Botão login*/}
             <div className="d-flex">
-              <button type="button" className="btn btn-outline-primary me-2 rounded-5" id="btn-login">
+              <button 
+                type="button" 
+                className="btn btn-outline-primary me-2 rounded-5" id="btn-login">
                 <span><i class="fa-solid fa-user"></i></span>
               </button>
             </div>
           </NavLink>
         </li>
+
+        <li>
+          <NavLink
+          to="/cadastro"
+          className={({ isActive }) =>
+            "nav-link px-3 rounded-5" +
+            (isActive ? " bg-white text-dark " : " text-white")
+          }
+        >
+          {/* Botão de cadastro */}
+          <div className="d-flex">
+            <button
+              type="button"
+              className="btn btn-light me-2 rounded-5"
+              style={{ border: "none" }}
+              id="btn-cadastro"
+            >
+              <i className="fa-solid fa-plus-circle"></i>
+            </button>
+          </div>
+        </NavLink>
+      </li>
 
       
     </header>

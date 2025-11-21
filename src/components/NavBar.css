@@ -10,6 +10,9 @@
 #btn-login:hover {
     color: black;
 }
+li{
+    list-style-type: none;
+}
 
 /* @media (max-width: 600px) {
   

@@ -1,7 +1,6 @@
 import ListaFilmes from "./pages/ListaFilmes";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sobre from "./pages/Sobre.jsx";
 import NavBar from "./components/NavBar.jsx";
 import MyCarousel from "./components/carousel/MyCarousel.jsx";
 import MultiCarousel, { slidesFiccao, slidesDrama } from "./components/carousel/MultiCarousel.jsx";
@@ -12,6 +11,7 @@ import MinhaLista from "./pages/MinhaLista.jsx";
 import Cadastro from "./pages/Cadastro.jsx";
 import Login from "./pages/Login.jsx";
 import MeusFilmes from "./pages/MeusFilmes.jsx";
+import AdicionaFilme from "./pages/AdicionaFilme.jsx";
 
 export default function App() {
   return (
@@ -25,11 +25,11 @@ export default function App() {
               <>
                 <MyCarousel />
                   <Categorias />
-                <ListaFilmes />
+                <MeusFilmes />
               </>
             }
           />
-          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/adicionaFilme" element={<AdicionaFilme />} />
           <Route path="/categorias" element={<Categorias />} />
           <Route path="/minha-lista" element={<MinhaLista />} />
           <Route path="/cadastro" element={<Cadastro />} />

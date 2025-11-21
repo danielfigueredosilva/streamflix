@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/Button.css"; // Vamos criar este CSS
+import "../components/Button.css";
 
 
 export const Botao = ({ children, onClick, size = "medium" }) => {
