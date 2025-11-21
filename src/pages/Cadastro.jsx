@@ -48,7 +48,7 @@ export default function Cadastro() {
         onChange={(e) => setSenha(e.target.value)}
       />
 
-      <button onClick={cadastrar}>Cadastrar.</button>
+      <button onClick={cadastrar}>Cadastrar</button>
       <button onClick={() => {navigate('/login')}}>Login</button>
 
       {msg && <p>{msg}</p>}
