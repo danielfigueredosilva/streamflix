@@ -18,7 +18,7 @@ const NavBar = () => {
       <ul className="nav justify-content-center flex-grow-1">
         <li>
           <NavLink
-            to="/"
+            to="/meusFilmes"
             className={({ isActive }) =>
               "nav-link px-3 rounded-5" +
               (isActive ? " bg-white text-dark " : " text-white")
@@ -28,7 +28,9 @@ const NavBar = () => {
             Filmes
           </NavLink>
         </li>
-        <li>
+
+        {/* categorias */}
+        {/* <li>
           <NavLink
             to="/categorias"
             className={({ isActive }) =>
@@ -38,19 +40,7 @@ const NavBar = () => {
           >
             Categorias
           </NavLink>
-        </li>
-        
-        <li>
-          <NavLink
-            to="/meusFilmes"
-            className={({ isActive }) =>
-              "nav-link px-3 rounded-5" +
-              (isActive ? " bg-white text-dark " : " text-white")
-            }
-          >
-            Meus Filmes
-          </NavLink>
-        </li>
+        </li> */}
 
         <li>
           <NavLink

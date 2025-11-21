@@ -20,7 +20,7 @@ export default function Login() {
     const data = await response.json();
 
     if (response.ok) {
-      navigate("/");
+      navigate("/MeusFilmes");
     } else {
       setMsg(data.erro);
     }

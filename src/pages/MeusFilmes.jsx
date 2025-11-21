@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import './MeusFilmes.css'
+import { API } from '../components/API/api'
+import { useNavigate } from "react-router-dom";
 
 export default function MeusFilmes() {
   const [filmes, setFilmes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(null);
 
+  const navigate = useNavigate();
+
   // Função para buscar os filmes
   const fetchFilmes = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/forum/filmes/");
+      const response = await fetch(`${API}/filmes/`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -44,93 +48,18 @@ export default function MeusFilmes() {
             <p><strong>Lançamento:</strong> {filme.data_lancamento}</p>
             <p><strong>Avaliação:</strong> {filme.avaliacao}</p>
             {filme.user && <p><strong>Criado por:</strong> {filme.user}</p>}
+
+            {/* Botão de detalhes */}
+            <button
+              onClick={() => navigate(`/filme/${filme.id}`, { state: { filme } })}
+            >
+              Detalhes
+            </button>
           </div>
+
+          
         ))
       )}
     </div>
   );
 }
-
-
-
-
-// import { useState } from "react";
-// import { API } from "../components/API/api";
-
-// export default function CriarFilme() {
-//   const [titulo, setTitulo] = useState("");
-//   const [descricao, setDescricao] = useState("");
-//   const [poster, setPoster] = useState("");
-//   const [dataLancamento, setDataLancamento] = useState("");
-//   const [avaliacao, setAvaliacao] = useState(0);
-//   const [msg, setMsg] = useState("");
-
-//   const getCookie = (name) => {
-//     let cookieValue = null;
-//     if (document.cookie && document.cookie !== "") {
-//       const cookies = document.cookie.split(";");
-//       for (let cookie of cookies) {
-//         cookie = cookie.trim();
-//         if (cookie.startsWith(name + "=")) {
-//           cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-//           break;
-//         }
-//       }
-//     }
-//     return cookieValue;
-//   };
-
-//   const criarFilme = async () => {
-//     const csrftoken = getCookie("csrftoken");
-
-//     try {
-//       const response = await fetch(`${API}/filmes/criar/`, {
-//         method: "POST",
-//         credentials: "include", // envia o cookie de sessão
-//         headers: {
-//           "Content-Type": "application/json",
-//           "X-CSRFToken": csrftoken, // envia CSRF token
-//         },
-//         body: JSON.stringify({
-//           titulo,
-//           descricao,
-//           poster,
-//           data_lancamento: dataLancamento,
-//           avaliacao,
-//         }),
-//       });
-
-//       const data = await response.json();
-
-//       if (response.ok) {
-//         setMsg(data.msg);
-//         setTitulo("");
-//         setDescricao("");
-//         setPoster("");
-//         setDataLancamento("");
-//         setAvaliacao(0);
-//       } else {
-//         setMsg(data.erro);
-//       }
-//     } catch (error) {
-//       setMsg("Erro ao criar filme");
-//       console.error(error);
-//     }
-//   };
-
-//   return (
-//     <div style={{ width: 400, margin: "50px auto" }}>
-//       <h2>Criar Filme</h2>
-
-//       <input type="text" placeholder="Título" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
-//       <input type="text" placeholder="Descrição" value={descricao} onChange={(e) => setDescricao(e.target.value)} />
-//       <input type="text" placeholder="URL do Poster" value={poster} onChange={(e) => setPoster(e.target.value)} />
-//       <input type="date" placeholder="Data de Lançamento" value={dataLancamento} onChange={(e) => setDataLancamento(e.target.value)} />
-//       <input type="number" placeholder="Avaliação" value={avaliacao} onChange={(e) => setAvaliacao(Number(e.target.value))} />
-
-//       <button onClick={criarFilme}>Criar Filme</button>
-
-//       {msg && <p>{msg}</p>}
-//     </div>
-//   );
-// }
