@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { API } from "../components/API/api";
 import { useNavigate } from "react-router-dom";
-import "./Cadastro.css";
+import "./Cadastro.css"
 
 export default function Cadastro() {
   const [email, setEmail] = useState("");
@@ -30,7 +30,8 @@ export default function Cadastro() {
   };
 
   return (
-    <div style={{ width: 300, margin: "50px auto" }}>
+    <div className="cadastro-container">
+
       <h2>Cadastro</h2>
 
       <input
@@ -47,7 +48,7 @@ export default function Cadastro() {
         onChange={(e) => setSenha(e.target.value)}
       />
 
-      <button onClick={cadastrar}>Cadastrar</button>
+      <button onClick={cadastrar}>Cadastrar.</button>
       <button onClick={() => {navigate('/login')}}>Login</button>
 
       {msg && <p>{msg}</p>}
