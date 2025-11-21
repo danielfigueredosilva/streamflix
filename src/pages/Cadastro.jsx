@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { API } from "../components/API/api";
 import { useNavigate } from "react-router-dom";
+import "./Cadastro.css";
 
 export default function Cadastro() {
   const [email, setEmail] = useState("");
