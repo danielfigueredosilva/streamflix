@@ -1,0 +1,116 @@
+
+
+.secao-container {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background-color: #141414; 
+}
+
+.secao-title {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-left: 40px; 
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+.slick-slider {
+    margin: 0 40px; 
+    position: relative; 
+}
+
+
+.slick-list {
+    overflow: hidden; 
+}
+
+
+.slick-track {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.slick-slide {
+    padding: 0 5px; 
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+
+.movie-card {
+    
+    width: 100%; 
+    height: auto;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative; 
+    transition: transform 0.3s ease;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.movie-card:hover {
+    transform: scale(1.05); 
+    z-index: 10; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.movie-card:hover .movie-poster {
+    border: 3px solid #e50914; 
+}
+
+.movie-title {
+    color: #fff;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    padding: 0 5px;
+}
+
+
+
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 40px; 
+    color: #fff; 
+    opacity: 0.8;
+}
+
+
+.slick-prev {
+    left: -35px; 
+    z-index: 20; 
+}
+
+
+.slick-next {
+    right: -35px; 
+    z-index: 20;
+}
+
+
+.slick-prev,
+.slick-next {
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.secao-container:hover .slick-prev,
+.secao-container:hover .slick-next {
+    opacity: 1; 
+}

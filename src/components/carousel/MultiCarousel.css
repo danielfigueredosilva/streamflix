@@ -1,0 +1,28 @@
+.react-multiple-carousel__arrow {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* deixa o fundo escuro */
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 10 !important;
+  top: 30%;
+}
+
+/* seta da esquerda */
+.react-multiple-carousel__arrow--left {
+  left: 10px !important; /* ajusta distância da borda */
+}
+
+/* seta da direita */
+.react-multiple-carousel__arrow--right {
+  right: 10px !important;
+}
+
+/* ícones das setas */
+.react-multiple-carousel__arrow::before {
+  color: white !important;  /* cor da seta */
+  font-size: 20px !important;
+}
+
+p{
+    color: white;
+}

@@ -1,0 +1,68 @@
+/* Container geral */
+.cadastro-container {
+  width: 350px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #141414;          /* Preto Netflix */
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+}
+
+/* Título */
+.cadastro-container h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #e50914;               /* Vermelho Netflix */
+}
+
+/* Inputs */
+.cadastro-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  background: #222;             /* Cinza escuro Netflix */
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+/* Foco dos inputs */
+.cadastro-container input:focus {
+  border-color: #e50914;        /* Vermelho Netflix */
+  box-shadow: 0 0 5px rgba(229, 9, 20, 0.6);
+}
+
+/* Botão */
+.cadastro-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: #e50914;          /* Vermelho Netflix */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Hover no botão */
+.cadastro-container button:hover {
+  background: #f6121d;
+  transform: scale(1.03);
+}
+
+/* Mensagem */
+.cadastro-container p {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #bbb;
+}

@@ -1,0 +1,21 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body{
+/* FUNDO DE TODAS AS PAGINAS */
+     background: linear-gradient(
+        to top,
+         #000000 0%,      
+        #1a0000 20%,     
+        #360e0e 50%,     
+        #661a1a  84%,     
+        #942525 97% 
+    );
+    
+    background-attachment: fixed; /* Para ficar o gradiente continuo */
+    background-size: cover; 
+    
+
+}

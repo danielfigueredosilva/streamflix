@@ -1,0 +1,75 @@
+/* Botões Base */
+.btn-play, .btn-trailer, .btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+}
+
+
+
+.btn-medium {
+  padding: 14px 14px;
+  font-size: 1.1rem;
+}
+
+
+
+
+.btn-play {
+  background: #e50914;
+  color: white;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.btn-play:hover {
+  background: #f40612;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Ícone Play */
+.play-icon {
+  font-size: 1.1rem;
+}
+
+/* Tamanhos para botão secundário */
+.btn-secondary.btn-small {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.btn-secondary.btn-medium {
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+}
+
+.btn-secondary.btn-large {
+  width: 56px;
+  height: 56px;
+  font-size: 1.6rem;
+}

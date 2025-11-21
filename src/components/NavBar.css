@@ -1,0 +1,19 @@
+#btn-login{
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 8px 16px;
+}
+
+#btn-login:hover {
+    color: black;
+}
+li{
+    list-style-type: none;
+}
+
+/* @media (max-width: 600px) {
+  
+} */
