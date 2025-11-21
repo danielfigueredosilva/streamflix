@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MinhaLista from "./pages/MinhaLista.jsx";
 import Cadastro from "./pages/Cadastro.jsx";
+import Login from "./pages/Login.jsx";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/categorias" element={<Categorias />} />
           <Route path="/minha-lista" element={<MinhaLista />} />
           <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/login" element={<Login />} />
 
         </Routes>
       </BrowserRouter>

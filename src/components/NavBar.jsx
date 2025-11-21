@@ -61,6 +61,17 @@ const NavBar = () => {
             Sobre
           </NavLink>
         </li>
+         <li>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              "nav-link px-3 rounded-5" +
+              (isActive ? " bg-white text-dark " : " text-white")
+            }
+          >
+            Login
+          </NavLink>
+        </li>
       </ul>
       <li>
           <NavLink

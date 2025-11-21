@@ -1,33 +1,34 @@
 import { useState } from "react";
 import { API } from "../components/API/api";
+import { useNavigate } from "react-router-dom";
 
-export default function Cadastro() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [msg, setMsg] = useState("");
 
-  const cadastrar = async () => {
-    try {
-      const response = await fetch(`${API}/registrar/`, {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          senha,
-        }),
-      });
+  const navigate = useNavigate();
 
-      const data = await response.json();
-      setMsg(data.msg || data.erro || "Sem retorno");
-    } catch (error) {
-      setMsg("Erro ao conectar com o servidor");
+  const logar = async () => {
+    const response = await fetch(`${API}/login/`, {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, senha }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      navigate("/");
+    } else {
+      setMsg(data.erro);
     }
   };
 
   return (
     <div style={{ width: 300, margin: "50px auto" }}>
-      <h2>Cadastro</h2>
+      <h2>Login</h2>
 
       <input
         type="text"
@@ -43,7 +44,7 @@ export default function Cadastro() {
         onChange={(e) => setSenha(e.target.value)}
       />
 
-      <button onClick={cadastrar}>Cadastrar</button>
+      <button onClick={logar}>Entrar</button>
 
       {msg && <p>{msg}</p>}
     </div>
