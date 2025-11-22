@@ -42,9 +42,9 @@ export default function MeusFilmes() {
       ) : (
         filmes.map((filme) => (
           <div key={filme.id} className="filme-card">
-            <h2>{filme.titulo}</h2>
             <img src={filme.poster} alt={filme.titulo} width="200" />
-            <p>{filme.descricao}</p>
+            <h2>{filme.titulo}</h2>
+            {/* <p>{filme.descricao}</p> */}
             <p><strong>Lançamento:</strong> {filme.data_lancamento}</p>
             <p><strong>Avaliação:</strong> {filme.avaliacao}</p>
             {filme.user && <p><strong>Criado por:</strong> {filme.user}</p>}

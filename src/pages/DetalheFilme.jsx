@@ -1,4 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
+// import './DetalheFilme.css'
+import { API } from "../components/API/api";
 
 export default function DetalheFilme() {
   const location = useLocation();
@@ -15,7 +17,7 @@ export default function DetalheFilme() {
 
   const apagarFilme = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/filmes/${id}/apagar/`, {
+      const response = await fetch(`${API}/filmes/${id}/apagar/`, {
         method: 'DELETE',
         credentials: "include", // envia cookies de sessão
         headers: {
@@ -31,7 +33,7 @@ export default function DetalheFilme() {
 
       const data = await response.json();
       console.log(data.message);
-      navigate("/MeusFilmes"); // redireciona após apagar
+      navigate("/MeusFilmes");
     } catch (err) {
       console.error(err);
     }
@@ -47,7 +49,7 @@ export default function DetalheFilme() {
       {filme.user && <p><strong>Criado por:</strong> {filme.user}</p>}
 
       <button 
-        onClick={() => apagarFilme(filme.id)} // ✅ passar o id
+        onClick={() => apagarFilme(filme.id)}
         style={{ background: "red", color: "#fff", padding: "10px", border: "none", borderRadius: "5px", cursor: "pointer", marginTop: "20px" }}
       >
         Apagar Filme
