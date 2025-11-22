@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-// import './DetalheFilme.css'
+import './DetalheFilme.css'
 import { API } from "../components/API/api";
 
 export default function DetalheFilme() {
@@ -40,20 +40,27 @@ export default function DetalheFilme() {
   };
 
   return (
-    <div>
+  <div className="detalhe-container">
+    
+    <img className="detalhe-poster" src={filme.poster} alt={filme.titulo} />
+
+    <div className="detalhe-info">
       <h1>{filme.titulo}</h1>
-      <img src={filme.poster} alt={filme.titulo} width="300" />
-      <p>{filme.descricao}</p>
-      <p><strong>Lançamento:</strong> {filme.data_lancamento}</p>
-      <p><strong>Avaliação:</strong> {filme.avaliacao}</p>
+      <div class="textos" >
+        <p>{filme.descricao}</p>
+        <p><strong>Lançamento:</strong> {filme.data_lancamento}</p>
+        <p><strong>Avaliação:</strong> {filme.avaliacao}</p>
+      </div>
       {filme.user && <p><strong>Criado por:</strong> {filme.user}</p>}
 
       <button 
+        className="btn-delete"
         onClick={() => apagarFilme(filme.id)}
-        style={{ background: "red", color: "#fff", padding: "10px", border: "none", borderRadius: "5px", cursor: "pointer", marginTop: "20px" }}
       >
         Apagar Filme
       </button>
     </div>
+  </div>
   );
+
 }
