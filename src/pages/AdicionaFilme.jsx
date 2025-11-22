@@ -135,6 +135,7 @@ const styles = {
     borderRadius: "5px",
     border: "none",
     outline: "none",
+    
   },
   textarea: {
     padding: "10px",
