@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { API } from '../components/API/api.jsx'
+import "./AdicionaFilme.css"; // <-- importa o CSS externo
 
 export default function AdicionaFilme() {
   const [titulo, setTitulo] = useState("");
@@ -9,9 +10,6 @@ export default function AdicionaFilme() {
   const [avaliacao, setAvaliacao] = useState("");
   const [mensagem, setMensagem] = useState("");
 
-  // -------------------------------
-  // PEGAR TOKEN CSRF DO COOKIE
-  // -------------------------------
   function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -25,7 +23,7 @@ export default function AdicionaFilme() {
 
     const response = await fetch(`${API}/filmes/criar/`, {
       method: "POST",
-      credentials: "include", // ESSENCIAL PARA ENVIAR COOKIES
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         "X-CSRFToken": csrftoken,
@@ -54,12 +52,13 @@ export default function AdicionaFilme() {
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Adicionar Filme</h1>
+    
+    <div className="adicionar-container">
+      <h1 className="adicionar-title">Adicionar Filme</h1>
 
-      <form onSubmit={enviarFilme} style={styles.form}>
+      <form onSubmit={enviarFilme} className="adicionar-form">
         <input
-          style={styles.input}
+          className="adicionar-input"
           type="text"
           placeholder="Título"
           value={titulo}
@@ -68,7 +67,7 @@ export default function AdicionaFilme() {
         />
 
         <textarea
-          style={styles.textarea}
+          className="adicionar-textarea"
           placeholder="Descrição"
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
@@ -76,7 +75,7 @@ export default function AdicionaFilme() {
         />
 
         <input
-          style={styles.input}
+          className="adicionar-input"
           type="text"
           placeholder="URL do Poster"
           value={poster}
@@ -85,7 +84,7 @@ export default function AdicionaFilme() {
         />
 
         <input
-          style={styles.input}
+          className="adicionar-input"
           type="date"
           value={dataLancamento}
           onChange={(e) => setDataLancamento(e.target.value)}
@@ -93,7 +92,7 @@ export default function AdicionaFilme() {
         />
 
         <input
-          style={styles.input}
+          className="adicionar-input"
           type="number"
           placeholder="Avaliação (0-10)"
           value={avaliacao}
@@ -104,58 +103,10 @@ export default function AdicionaFilme() {
           required
         />
 
-        <button style={styles.button}>Salvar Filme</button>
+        <button className="adicionar-button">Salvar Filme</button>
       </form>
 
-      {mensagem && <p style={styles.msg}>{mensagem}</p>}
+      {mensagem && <p className="adicionar-msg">{mensagem}</p>}
     </div>
   );
 }
-
-const styles = {
-  container: {
-    maxWidth: "500px",
-    margin: "0 auto",
-    padding: "20px",
-    background: "rgba(0, 0, 0, 0.75)",
-    color: "#fff",
-    borderRadius: "10px",
-  },
-  title: {
-    textAlign: "center",
-    marginBottom: "20px",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px",
-  },
-  input: {
-    padding: "10px",
-    borderRadius: "5px",
-    border: "none",
-    outline: "none",
-    
-  },
-  textarea: {
-    padding: "10px",
-    borderRadius: "5px",
-    height: "80px",
-    border: "none",
-    outline: "none",
-  },
-  button: {
-    padding: "12px",
-    border: "none",
-    borderRadius: "6px",
-    background: "#e50914",
-    color: "#fff",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-  msg: {
-    marginTop: "15px",
-    textAlign: "center",
-    fontWeight: "bold",
-  },
-};

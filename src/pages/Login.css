@@ -1,6 +1,6 @@
 .container-login {
   min-height: 100vh;
- 
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,8 @@
 }
 
 .card-login {
-  background: #0a0a0a;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  background: #141414; 
   padding: 40px 30px;
   border-radius: 15px;
   border: 1px solid #330000;
@@ -19,11 +20,12 @@
 }
 
 .titulo-login {
-  color: #ffffff;
   text-align: center;
   margin-bottom: 30px;
   position: relative;
-  font-size: 34px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #e50914;  
  
 }
     

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 header {
   background: rgba(0, 0, 0, 0.8);
@@ -11,9 +12,9 @@ header {
   transition: 0.3s ease;
 }
 
-
 .nav-link {
   color: #e5e5e5 !important;
+  
 }
 
 .nav-link:hover {
@@ -38,7 +39,6 @@ header {
   transition: 0.3s ease;
   font-size: 1.2rem;
 }
-
 
 #btn-login {
   border: 2px solid #e50914 !important;
@@ -93,4 +93,10 @@ header ul {
 
 li{
     list-style-type: none;
+}
+
+span{
+ 
+  font-family: 'Bebas Neue', cursive;
+  font-size: x-large;
 }

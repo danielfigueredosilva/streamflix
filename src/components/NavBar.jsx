@@ -25,7 +25,7 @@ const NavBar = () => {
             }
           
           >
-            Filmes
+            <span>Filmes</span>
           </NavLink>
         </li>
 
@@ -50,7 +50,7 @@ const NavBar = () => {
               (isActive ? " bg-white text-dark " : " text-white")
             }
           >
-            Adiocionar Filmes
+            <span>Adicionar Filmes</span>
           </NavLink>
         </li>
       </ul>

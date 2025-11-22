@@ -1,0 +1,82 @@
+
+.adicionar-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 12px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.adicionar-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.adicionar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.adicionar-input,
+.adicionar-textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #232323;
+  color: white;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.adicionar-input:focus,
+.adicionar-textarea:focus {
+  background: #2f2f2f;
+  transform: scale(1.03);
+}
+
+.adicionar-textarea {
+  height: 90px;
+  resize: none;
+}
+
+.adicionar-button {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #e50914;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.adicionar-button:hover {
+  background: #f6121d;
+  transform: scale(1.05);
+}
+
+.adicionar-msg {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #46d369; 
+}
+
+@media (max-width: 500px) {
+  .adicionar-container {
+    width: 90%;
+  }
+
+  .adicionar-title {
+    font-size: 1.7rem;
+  }
+}
