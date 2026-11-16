@@ -1,2 +1,2 @@
 # streamflix
-Streaming de filmes feito com React utilizando API.
+Projeto de Fron-End desenvolvido com React utilizando API, simulando uma plataforma de streaming.
